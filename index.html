@@ -23,12 +23,16 @@
       p {
         font-size: 100px;
       }
+      img {
+        width: 0px;
+        height: 0px;
+      }
     </style>
   </head>
   <body>
     <button onclick="pergunta()">Pergunta</button><br />
     <h1 class="acertos"></h1>
-    <p class="emoji"></p>
+    <img src="" class="img" />
     <script>
       let n1 = 0;
       let n2 = 0;
@@ -36,7 +40,7 @@
       let respostaC = "nada";
       let verificar = false;
       let h1t = document.querySelector(".acertos");
-      let emoji = document.querySelector(".emoji");
+      let foto = document.querySelector(".img");
       let acertos = 0;
       h1t.innerHTML = `Pontos: ${acertos}`;
       function pergunta() {
@@ -65,11 +69,15 @@
       }
       function certo() {
         document.body.style.backgroundColor = "green";
-        emoji.innerHTML = "😀";
+        foto.src = "acerto.jpg";
+        foto.style.height = "350px";
+        foto.style.width = "350px";
       }
       function errado() {
         document.body.style.backgroundColor = "red";
-        emoji.innerHTML = "😭​";
+        foto.src = "erro.jpg";
+        foto.style.height = "350px";
+        foto.style.width = "350px";
       }
     </script>
   </body>
