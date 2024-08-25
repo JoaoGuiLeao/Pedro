@@ -59,25 +59,26 @@
         verificar = respostaC == resposta;
         if (verificar === true) {
           certo();
+          foto.style.height = "350px";
+          foto.style.width = "350px";
+          foto.src = "acerto.jpg";
           acertos++;
           h1t.innerHTML = `Pontos: ${acertos}`;
         } else {
           errado();
+          foto.style.height = "350px";
+          foto.style.width = "350px";
+          foto.src = "erro.jpg";
           acertos--;
           h1t.innerHTML = `Pontos: ${acertos}`;
         }
       }
+      ss;
       function certo() {
         document.body.style.backgroundColor = "green";
-        foto.src = "acerto.jpg";
-        foto.style.height = "350px";
-        foto.style.width = "350px";
       }
       function errado() {
         document.body.style.backgroundColor = "red";
-        foto.src = "erro.jpg";
-        foto.style.height = "350px";
-        foto.style.width = "350px";
       }
     </script>
   </body>
