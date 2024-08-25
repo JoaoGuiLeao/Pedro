@@ -4,20 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculos de Pedro</title>
-    <style></style>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+        background-color: black;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+      }
+      p {
+        font-size: 60px;
+      }
+    </style>
   </head>
   <body>
     <button onclick="pergunta()">Pergunta</button><br />
-    <h2 class="acertos"></h2>
+    <h1 class="acertos"></h1>
+    <p class="emoji"></p>
     <script>
       let n1 = 0;
       let n2 = 0;
       let resposta = "nada";
       let respostaC = "nada";
       let verificar = false;
-      let h2t = document.querySelector(".acertos");
+      let h1t = document.querySelector(".acertos");
+      let emoji = document.querySelector(".emoji");
       let acertos = 0;
-      h2t.innerHTML = `Acertos: ${acertos}`;
+      h1t.innerHTML = `Pontos: ${acertos}`;
       function pergunta() {
         n1 = Math.random() * 10;
         n2 = Math.random() * 10;
@@ -35,16 +52,20 @@
         if (verificar === true) {
           certo();
           acertos++;
-          h2t.innerHTML = `Acertos: ${acertos}`;
+          h1t.innerHTML = `Pontos: ${acertos}`;
         } else {
           errado();
+          acertos--;
+          h1t.innerHTML = `Pontos: ${acertos}`;
         }
       }
       function certo() {
         document.body.style.backgroundColor = "green";
+        emoji.innerHTML = "😀";
       }
       function errado() {
         document.body.style.backgroundColor = "red";
+        emoji.innerHTML = "😭​";
       }
     </script>
   </body>
