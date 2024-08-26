@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculos de Pedro</title>
     <style>
       body {
-        display: grid;
-        place-items: center;
-        background-color: rgb(182, 250, 228);
+        background-color: rgb(201, 252, 236);
       }
       button {
         width: 200px;
@@ -19,6 +17,7 @@
         font-family: "Courier New", Courier, monospace;
         border-radius: 50px;
         border: solid black 4px;
+        box-shadow: 3px 3px rgb(0, 0, 0);
       }
       h1 {
         color: white;
@@ -27,22 +26,42 @@
         background-color: aquamarine;
         border: solid black 4px;
         border-radius: 15px;
+        box-shadow: 3px 3px rgb(0, 0, 0);
       }
       p {
         font-size: 100px;
+      }
+      div {
+        display: grid;
+        place-items: center;
       }
       img {
         width: 0px;
         height: 0px;
         border: solid aquamarine 0px;
         border-radius: 80px;
+        box-shadow: 4px 4px rgb(0, 0, 0);
+      }
+      section {
+        display: grid;
+        place-items: center;
+        background-color: rgb(182, 250, 228);
+        border: solid black 3px;
+        border-radius: 100px;
+        box-shadow: 3px 3px rgb(0, 0, 0);
       }
     </style>
   </head>
   <body>
-    <button onclick="pergunta()" id="bt">Pergunta</button><br />
-    <h1 class="acertos"></h1>
-    <img src="" class="img" />
+    <section id="menu">
+      <br />
+      <button onclick="pergunta()" id="bt">Pergunta</button><br />
+      <h1 class="acertos"></h1>
+    </section>
+    <br />
+    <div>
+      <img src="" class="img" />
+    </div>
     <script>
       let n1 = 0;
       let n2 = 0;
@@ -52,6 +71,7 @@
       let h1t = document.querySelector(".acertos");
       let foto = document.querySelector(".img");
       let perg = document.querySelector("#bt");
+      let menu = document.querySelector("#menu");
       let acertos = 0;
       h1t.innerHTML = `Pontos:${acertos}`;
       function pergunta() {
@@ -88,11 +108,13 @@
       }
       function certo() {
         document.body.style.backgroundColor = "rgb(121, 252, 150)";
+        menu.style.backgroundColor = "rgb(109, 250, 139)";
         h1t.style.backgroundColor = "rgb(101, 250, 133)";
         perg.style.backgroundColor = "rgb(101, 250, 133)";
       }
       function errado() {
-        document.body.style.backgroundColor = "rgb(255, 150, 127)";
+        document.body.style.backgroundColor = "rgb(255, 179, 159)";
+        menu.style.backgroundColor = "rgb(255, 150, 127)";
         h1t.style.backgroundColor = "#f38067";
         perg.style.backgroundColor = "#f38067";
       }
