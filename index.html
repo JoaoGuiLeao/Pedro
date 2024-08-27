@@ -39,8 +39,8 @@
         width: 0px;
         height: 0px;
         border: solid aquamarine 0px;
-        border-radius: 80px;
-        box-shadow: 4px 4px rgb(0, 0, 0);
+        border-radius: 200px;
+        box-shadow: 9px 9px rgb(0, 0, 0);
       }
       section {
         display: grid;
@@ -65,6 +65,7 @@
     <script>
       let n1 = 0;
       let n2 = 0;
+      let n3 = 0;
       let resposta = "nada";
       let respostaC = "nada";
       let verificar = false;
@@ -77,23 +78,29 @@
       function pergunta() {
         n1 = Math.random() * 10;
         n2 = Math.random() * 10;
+        n3 = Math.random() * 10;
         n1 = Math.round(n1);
         n2 = Math.round(n2);
+        n3 = Math.round(n3);
         if (n1 === 0) {
           n1++;
         }
         if (n2 === 0) {
           n2++;
         }
-        resposta = prompt(`${n1} + ${n2}`);
-        respostaC = n1 + n2;
+        if (n3 === 0) {
+          n3++;
+        }
+        resposta = prompt(`${n1} + ${n2} + ${n3}`);
+        respostaC = n1 + n2 + n3;
         verificar = respostaC == resposta;
         if (verificar === true) {
           certo();
           foto.style.height = "350px";
           foto.style.width = "350px";
           foto.style.border = "solid black 4px";
-          foto.src = "acerto.jpg";
+          foto.style.backgroundColor = "rgb(109, 250, 139)";
+          foto.src = "acerto.png";
           acertos++;
           h1t.innerHTML = `Pontos:${acertos}`;
         } else {
@@ -101,7 +108,8 @@
           foto.style.height = "350px";
           foto.style.width = "350px";
           foto.style.border = "solid black 4px";
-          foto.src = "erro.jpg";
+          foto.style.backgroundColor = "rgb(255, 150, 127)";
+          foto.src = "erro.png";
           acertos--;
           h1t.innerHTML = `Pontos:${acertos}`;
         }
