@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(201, 252, 236);
+}
+button {
+  width: 200px;
+  height: 100px;
+  background-color: aquamarine;
+  color: white;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 50px;
+  border: solid black 4px;
+  box-shadow: 3px 3px rgb(0, 0, 0);
+}
+h1 {
+  color: white;
+  font-size: 50px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: aquamarine;
+  border: solid black 4px;
+  border-radius: 15px;
+  box-shadow: 3px 3px rgb(0, 0, 0);
+}
+p {
+  font-size: 100px;
+}
+div {
+  display: grid;
+  place-items: center;
+}
+img {
+  width: 0px;
+  height: 0px;
+  border: solid aquamarine 0px;
+  border-radius: 200px;
+  box-shadow: 9px 9px rgb(0, 0, 0);
+}
+section {
+  display: grid;
+  place-items: center;
+  background-color: rgb(182, 250, 228);
+  border: solid black 3px;
+  border-radius: 100px;
+  box-shadow: 3px 3px rgb(0, 0, 0);
+}
