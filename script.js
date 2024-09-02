@@ -1,3 +1,4 @@
+// Variaveis
 let n1 = 0;
 let n2 = 0;
 let n3 = 0;
@@ -10,6 +11,7 @@ let perg = document.querySelector("#bt");
 let menu = document.querySelector("#menu");
 let acertos = 0;
 h1t.innerHTML = `Pontos:${acertos}`;
+// Pergunta
 function pergunta() {
   n1 = Math.random() * 10;
   n2 = Math.random() * 10;
@@ -29,7 +31,7 @@ function pergunta() {
   resposta = prompt(`${n1} + ${n2} + ${n3}`);
   respostaC = n1 + n2 + n3;
   verificar = respostaC == resposta;
-  if (verificar === true) {
+  if (verificar === true && resposta != "") {
     certo();
     foto.style.height = "350px";
     foto.style.width = "350px";
@@ -38,7 +40,7 @@ function pergunta() {
     foto.src = "acerto.png";
     acertos++;
     h1t.innerHTML = `Pontos:${acertos}`;
-  } else {
+  } else if (verificar === false && resposta != "") {
     errado();
     foto.style.height = "350px";
     foto.style.width = "350px";
@@ -47,6 +49,13 @@ function pergunta() {
     foto.src = "erro.png";
     acertos--;
     h1t.innerHTML = `Pontos:${acertos}`;
+  } else {
+    falta();
+    foto.style.height = "350px";
+    foto.style.width = "350px";
+    foto.style.border = "solid black 4px";
+    foto.style.backgroundColor = "rgb(251, 255, 127)";
+    foto.src = "falta.png";
   }
 }
 function certo() {
@@ -60,4 +69,10 @@ function errado() {
   menu.style.backgroundColor = "rgb(255, 150, 127)";
   h1t.style.backgroundColor = "#f38067";
   perg.style.backgroundColor = "#f38067";
+}
+function falta() {
+  document.body.style.backgroundColor = "rgb(248, 251, 158)";
+  menu.style.backgroundColor = "rgb(251, 255, 127)";
+  h1t.style.backgroundColor = "#faff5c";
+  perg.style.backgroundColor = "#faff5c";
 }
